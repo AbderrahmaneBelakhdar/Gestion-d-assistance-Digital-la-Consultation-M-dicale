@@ -1,0 +1,450 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <title>
+    DZDOC | Urologue pédiatrique Oran    </title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/dzdoc.css" rel="stylesheet">
+    <link href="assets/pushy/css/pushy.css" rel="stylesheet">
+    <link href="css/selectize/selectize.bootstrap3.css" rel="stylesheet" />
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- <link href="assets/bootstrap-switch/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet" /> -->
+    <!-- <link href='https://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/component.css"> -->
+    <!-- <link href="css/style-responsive.css" rel="stylesheet" /> -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js">
+    </script>
+    <script src="js/respond.min.js">
+    </script>
+    <![endif]-->
+    <style>
+    #agenda-previous {
+      color: #4BAE51;
+      position: absolute;
+      top: 10px;
+      left: -1px;
+    }
+    #agenda-next {
+      color: #4BAE51;
+      position: absolute;
+      top: 10px;
+      right: -1px;
+    }
+    .profil-btn {
+      margin-bottom: 5px;
+      margin-right: 0px;
+    }
+    .nowrap {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .video-tooltip {
+    position: absolute;
+    top: 4px;
+    right: 12px;
+    width: 24px;
+    height: 24px;
+    padding: 6px;
+    color: white;
+    background-color: #4BAE51;
+    font-size: 12px;
+    border-radius: 24px;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="loader"></div>
+<nav class="pushy pushy-right">
+  <ul class="list-unstyled">
+    <li class="pushy-link"><a href="#"><i class="fa fa-close"></i>&nbsp;Fermer</a></li>
+        <li class="pushy-link"><a target="_blank" href="//dzdoc.com/sante">Espace conseils santé</a></li>
+    <li class="pushy-link "><a href="//dzdoc.com/recherche-clinique.php">Trouvez une clinique / centre médical</a></li>
+    <li class="pushy-submenu ">
+      <a href="#"><i class="fa fa-pencil-square-o"></i>&nbsp;S'inscrire</a>
+      <ul class="list-unstyled">
+        <li class="pushy-link "><a href="//dzdoc.com/inscription.php"><i class="fa fa-user"></i>&nbsp;Patient</a></li>
+        <li class="pushy-link "><a href="//dzdoc.com/inscription-md.php"><i class="fa fa-user-md"></i>&nbsp;Médecin</a></li>
+      </ul>
+    </li>
+    <li class="pushy-submenu ">
+      <a href="#"><i class="fa fa-sign-in"></i>&nbsp;Se connecter</a>
+      <ul class="list-unstyled">
+        <li class="pushy-link "><a href="//dzdoc.com/connexion.php"><i class="fa fa-user"></i>&nbsp;Patient</a></li>
+        <li class="pushy-link "><a href="//dzdoc.com/connexion-md.php"><i class="fa fa-user-md"></i>&nbsp;Médecin</a></li>
+      </ul>
+    </li>
+    <!--<li><a href="#" class="sliding-u-l-r">عربي</a></li>-->
+      </ul>
+</nav>
+<div class="site-overlay"></div>
+<header class="head-section push">
+  <div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle menu-btn" type="button">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="//dzdoc.com/"><img src="//dzdoc.com/img/logo.png" alt="dzdoc" /></a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+                  <li ><a  class="sliding-u-l-r" target="_blank" href="//dzdoc.com/sante">Espace conseils santé</a></li>
+		  <li class="">
+            <a class="sliding-u-l-r" href="//dzdoc.com/recherche-clinique.php">Trouvez une clinique / centre médical</a>
+          </li>
+          <li class="dropdown-toggle ">
+            <a id="inscription-dzdoc" href="#" data-toggle="dropdown" class="sliding-u-l-r" aria-haspopup="true" aria-expanded="false"><i class="fa fa-pencil-square-o"></i>&nbsp;S'inscrire<span class="caret"></span></a>
+            <ul class="dropdown-menu" aria-labelledby="inscription-dzdoc">
+              <li><a class="" href="//dzdoc.com/inscription.php">Patient</a></li>
+              <li><a class="" href="//dzdoc.com/inscription-md.php">Médecin</a></li>
+            </ul>
+          </li>
+          <li class="dropdown-toggle ">
+            <a id="connexion-dzdoc" href="#" data-toggle="dropdown" class="sliding-u-l-r" aria-haspopup="true" aria-expanded="false"><i class="fa fa-sign-in"></i>&nbsp;Se connecter<span class="caret"></span></a>
+            <ul class="dropdown-menu" aria-labelledby="connexion-dzdoc">
+              <li><a class="" href="//dzdoc.com/connexion.php">Patient</a></li>
+              <li><a class=""  href="//dzdoc.com/connexion-md.php">Médecin</a></li>
+            </ul>
+          </li>
+          <!--<li><a href="#" class="sliding-u-l-r">عربي</a></li>-->
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    <div class="push">
+    <div id="container" class="container">
+      <div id="filter" class="">
+      <div class="row">
+        <form id="recherche" action="recherche.php" method="get">
+          <div class="col-sm-4 col-md-4">
+            <div class="form-group">
+              <label for="specialite">Choisissez la spécialité</label>
+              <select id="specialite" name="specialite" class="form-control" placeholder="Choisissez la spécialité">
+                  <!--
+                  <optgroup label="group01">
+                      <option>Médecin généraliste</option>
+                      <option>Gynécologue</option>
+                  </optgroup>
+                  <optgroup label="group02">
+                    <option>Dermatologue</option>
+                  </optgroup>
+                  -->
+                                        <option value="98" >Acupuncteur</option>
+                                          <option value="57" >Algologue</option>
+                                          <option value="2" >Allergologue</option>
+                                          <option value="3" >Anatomopathologiste</option>
+                                          <option value="4" >Anesthésiste-réanimateur</option>
+                                          <option value="5" >Angiologue</option>
+                                          <option value="68" >Audioprothésiste</option>
+                                          <option value="8" >Cardiologue</option>
+                                          <option value="9" >Cardiologue pédiatrique</option>
+                                          <option value="89" >Centre d'imagerie médicale</option>
+                                          <option value="69" >Chiropracteur</option>
+                                          <option value="10" >Chirurgien cardiaque</option>
+                                          <option value="11" >Chirurgien cardiaque pédiatrique</option>
+                                          <option value="65" >Chirurgien dentiste</option>
+                                          <option value="12" >Chirurgien esthétique et plastique</option>
+                                          <option value="80" >Chirurgien généraliste</option>
+                                          <option value="81" >Chirurgien infantile </option>
+                                          <option value="13" >Chirurgien maxillo-facial</option>
+                                          <option value="90" >Chirurgien Pédiatrique </option>
+                                          <option value="14" >Chirurgien thoracique</option>
+                                          <option value="15" >Chirurgien vasculaire</option>
+                                          <option value="16" >Chirurgien viscérale</option>
+                                          <option value="17" >Chirurgien viscérale pédiatrique</option>
+                                          <option value="93" >Clinique chirurgicale</option>
+                                          <option value="96" >Clinique d’hémodialyse</option>
+                                          <option value="94" >Clinique médicale</option>
+                                          <option value="95" >Clinique médico-chirurgicale</option>
+                                          <option value="97" >Clinique spécialisée</option>
+                                          <option value="54" >Dermato-vénérologue</option>
+                                          <option value="70" >Diététicien</option>
+                                          <option value="19" >Endocrino-diabetologue</option>
+                                          <option value="20" >Gastro-entéro-hepatologue</option>
+                                          <option value="21" >Généticien</option>
+                                          <option value="22" >Gérontologue - gériatre</option>
+                                          <option value="58" >Gynéco-obstetricien</option>
+                                          <option value="23" >Hématologue</option>
+                                          <option value="56" >Hépatologue</option>
+                                          <option value="83" >Infectiologue</option>
+                                          <option value="72" >Kinésithérapeute</option>
+                                          <option value="92" >Maladies et Chirurgie CardioVasculaire</option>
+                                          <option value="7" >Médecin Biologiste Laboratoire</option>
+                                          <option value="24" >Médecin du sport</option>
+                                          <option value="25" >Médecin du travail</option>
+                                          <option value="1" >Médecin géneraliste</option>
+                                          <option value="26" >Médecin interniste</option>
+                                          <option value="27" >Médecin légiste</option>
+                                          <option value="28" >Médecin nucléaire</option>
+                                          <option value="29" >Médecin physique et de réadaptation</option>
+                                          <option value="91" >Médecine esthétique</option>
+                                          <option value="33" >Néphrologue</option>
+                                          <option value="34" >Néphrologue pédiatrique</option>
+                                          <option value="30" >Neuro-chirurgien</option>
+                                          <option value="100" >Neuro-physiologiste</option>
+                                          <option value="101" >Neuro-psychiatre</option>
+                                          <option value="31" >Neurologue</option>
+                                          <option value="73" >Nutritionniste</option>
+                                          <option value="35" >Onco-cancerologue</option>
+                                          <option value="36" >Oncologue médical</option>
+                                          <option value="53" >Ophtalmologue</option>
+                                          <option value="99" >Optométriste</option>
+                                          <option value="85" >ORL</option>
+                                          <option value="74" >Orthophoniste</option>
+                                          <option value="75" >Orthoptiste</option>
+                                          <option value="67" >Ostéopathe</option>
+                                          <option value="52" >Pédiatre</option>
+                                          <option value="51" >Phlébologue</option>
+                                          <option value="38" >Pneumo-phtysio-allergologue</option>
+                                          <option value="76" >Podologue</option>
+                                          <option value="55" >Proctologue</option>
+                                          <option value="39" >Psychiatre</option>
+                                          <option value="77" >Psychologue</option>
+                                          <option value="40" >Radiologue</option>
+                                          <option value="41" >Radiothérapeute</option>
+                                          <option value="43" >Réanimateur médical</option>
+                                          <option value="44" >Réanimateur pédiatrique</option>
+                                          <option value="87" >Rééducation fonctionnelle</option>
+                                          <option value="42" >Rhumatologue</option>
+                                          <option value="45" >Sexologue</option>
+                                          <option value="46" >Stomatologue</option>
+                                          <option value="48" >Traumato-orthopédiste</option>
+                                          <option value="47" >Traumato-orthopédiste pédiatrique</option>
+                                          <option value="49" >Urologue</option>
+                                          <option value="50" selected>Urologue pédiatrique</option>
+                                  </select>
+            </div>
+          </div>
+       
+       
+       
+   <div class="col-sm-4 col-md-3">
+            <div class="form-group">
+              <label for="region">Wilaya</label>
+              <select id="region" name="region" class="form-control" placeholder="Choisissez la région">
+                                        <option value="1" >Adrar</option>
+                                          <option value="2" >Chlef</option>
+                                          <option value="3" >Laghouat</option>
+                                          <option value="4" >Oum El Bouaghi</option>
+                                          <option value="5" >Batna</option>
+                                          <option value="6" >Béjaia</option>
+                                          <option value="7" >Biskra</option>
+                                          <option value="8" >Béchar</option>
+                                          <option value="9" >Blida</option>
+                                          <option value="10" >Bouira</option>
+                                          <option value="11" >Tamanrasset</option>
+                                          <option value="12" >Tebessa</option>
+                                          <option value="13" >Tlemcen</option>
+                                          <option value="14" >Tiaret</option>
+                                          <option value="15" >Tizi Ouzou</option>
+                                          <option value="16" >Alger</option>
+                                          <option value="17" >Djelfa</option>
+                                          <option value="18" >Jijel</option>
+                                          <option value="19" >Sétif</option>
+                                          <option value="20" >Saida</option>
+                                          <option value="21" >Skikda</option>
+                                          <option value="22" >Sidi Bel Abbes</option>
+                                          <option value="23" >Annaba</option>
+                                          <option value="24" >Guelma</option>
+                                          <option value="25" >Constantine</option>
+                                          <option value="26" >Médéa</option>
+                                          <option value="27" >Mostaganem</option>
+                                          <option value="28" >M'Sila</option>
+                                          <option value="29" >Mascara</option>
+                                          <option value="30" >Ouargla</option>
+                                          <option value="31" selected>Oran</option>
+                                          <option value="32" >El Bayadh</option>
+                                          <option value="33" >Illizi</option>
+                                          <option value="34" >Bordj Bou Arreridj</option>
+                                          <option value="35" >Boumerdess</option>
+                                          <option value="36" >El Tarf</option>
+                                          <option value="37" >Tindouf</option>
+                                          <option value="38" >Tissemsilt</option>
+                                          <option value="39" >El Oued</option>
+                                          <option value="40" >Khenchela</option>
+                                          <option value="41" >Souk Ahras</option>
+                                          <option value="42" >Tipaza</option>
+                                          <option value="43" >Mila</option>
+                                          <option value="44" >Ain Defla</option>
+                                          <option value="45" >Nâama</option>
+                                          <option value="46" >Ain Temouchent</option>
+                                          <option value="47" >Ghardaia</option>
+                                          <option value="48" >Relizane</option>
+                                  </select>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-3">
+            <div class="form-group">
+              <label for="commune">Commune</label>
+              <select id="commune" name="commune" class="form-control" placeholder="Choisissez la commune" data-selected="">
+              </select>
+            </div>
+          </div>
+          <!--
+          <div class="col-md-2">
+            <div class="form-group">
+              <label for="sexe">Sexe</label>
+              <div class="btn-group" data-toggle="buttons" style="display:block;">
+                <label class="btn btn-default">
+                  <input type="radio" name="sexe" id="feminin" autocomplete="off"> Féminin
+                </label>
+                <label class="btn btn-default">
+                  <input type="radio" name="sexe" id="masculin" autocomplete="off"> Masculin
+                </label>
+              </div>
+            </div>
+          </div>
+          -->
+          <!--
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="sexe">Sexe</label>
+              <input type="checkbox" name="sexe" id="sexe" class="form-control">
+            </div>
+          </div>
+          -->
+          <div class="col-sm-12 col-md-2">
+            <div class="form-group">
+              <label>&nbsp;</label>
+              <button type="submit" class="form-control btn btn-info"><b>Chercher</b>&nbsp;&nbsp;<i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </form>
+      </div>
+            </div>
+      <div class="row  mar-b-50 text-center">
+        <div class="col-md-offset-2 col-md-8">
+          <h3>Aucun médecin n'a été trouvé</h3>
+          <p class="text-center">Vous connaissez un médecin qui n'est toujours pas sur DZDOC ?<br>Nous pouvons le contacter de votre part !</p>
+          <a href="#" class="btn green-btn">Faites découvrir DZDOC à votre médecin</a>
+        </div>
+      </div>
+      </div>
+          <footer class="footer">
+  <div class="bg-fafafa">
+    <div class="container pad-t-50">
+      <div class="row mar-b-50">
+        <div class="col-md-12 text-center">
+          <h3 class="dzdoc-blue">Pour plus d'informations, n'hésitez pas à nous contacter :</h3>
+		
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</footer>
+    </div>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="assets/pushy/js/pushy.min.js"></script>
+    <script src="js/selectize/standalone/selectize.min.js"></script>
+    <script type="text/javascript" src="js/jquery.sticky-kit.min.js"></script>
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyDlL7JDiVwhPIkoqzYfpu2IFJDYUa9kbLc"></script>
+    <script type="text/javascript" src="js/gmaps.min.js"></script>
+    <script src='assets/moment.js/moment.min.js'></script>
+    <script src="js/headerjs.js"></script>
+    <script src='assets/moment.js/fr.js'></script>
+    <!-- <script src='assets/bootstrap-switch/js/bootstrap-switch.min.js'></script> -->
+    <!-- <script src='js/recherche.js'></script> -->
+    <script type="text/javascript">
+      $(function(){
+        $('body').css('margin-bottom', $('.footer').height());
+        $('.footer').css('height', $('.footer').height());
+        $("#loader").addClass("hidden");
+        $('[data-toggle="tooltip"]').tooltip();
+        var $selectSpecialite = $('select#specialite').selectize({
+        // $('select#specialite').selectize({
+          // highlight: false
+        });
+        var selectSpecialite  = $selectSpecialite[0].selectize;
+        var communes = [[],[{"value":"","text":""},{"value":0,"text":"Adrar"},{"value":1,"text":"Bouda"},{"value":2,"text":"Ouled Ahmed Timmi"},{"value":3,"text":"Fenoughil"},{"value":4,"text":"Tamest"},{"value":5,"text":"Tamantit"},{"value":6,"text":"Reggane"},{"value":7,"text":"Sali"},{"value":8,"text":"Bordj Badji Mokhtar"},{"value":9,"text":"Timiaouine"},{"value":10,"text":"Aoulef"},{"value":11,"text":"Timekten"},{"value":12,"text":"Tit"},{"value":13,"text":"Akabli"},{"value":14,"text":"Timimoun"},{"value":15,"text":"Ouled Sa\u00efd"},{"value":16,"text":"Tsabit"},{"value":17,"text":"Sbaa"},{"value":18,"text":"Aougrout"},{"value":19,"text":"Deldoul"},{"value":20,"text":"Metarfa"},{"value":21,"text":"Tinerkouk"},{"value":22,"text":"Ksar Kaddour"},{"value":23,"text":"Charouine"},{"value":24,"text":"Talmine"},{"value":25,"text":"Ouled A\u00efssa"},{"value":26,"text":"Zaouiat Kounta"},{"value":27,"text":"In Zeghmir"}],[{"value":"","text":""},{"value":0,"text":"Chlef"},{"value":1,"text":"Oum Drou"},{"value":2,"text":"Sendjas"},{"value":3,"text":"Boukadir"},{"value":4,"text":"Sobha"},{"value":5,"text":"Oued Sly"},{"value":6,"text":"T\u00e9n\u00e8s"},{"value":7,"text":"Sidi Akacha"},{"value":8,"text":"Ouled Far\u00e8s"},{"value":9,"text":"Chettia"},{"value":10,"text":"Labiodh Medjadja"},{"value":11,"text":"Oued Fodda"},{"value":12,"text":"Ouled Abbas"},{"value":13,"text":"B\u00e9ni Rached"},{"value":14,"text":"B\u00e9ni Haoua"},{"value":15,"text":"Oued Goussine"},{"value":16,"text":"Breira"},{"value":17,"text":"Ain Merane"},{"value":18,"text":"Harenfa"},{"value":19,"text":"EL KARIMIA"},{"value":20,"text":"Harchoune"},{"value":21,"text":"B\u00e9ni Bouatteb"},{"value":22,"text":"Ouled Ben Abdelkader"},{"value":23,"text":"El Hadjadj"},{"value":24,"text":"Abou El Hassan"},{"value":25,"text":"Tadjena"},{"value":26,"text":"Talassa"},{"value":27,"text":"Zeboudja"},{"value":28,"text":"Benaria"},{"value":29,"text":"Bouzgha\u00efa"},{"value":30,"text":"El Marsa"},{"value":31,"text":"Sidi Abderrhmane"},{"value":32,"text":"Mossadek"},{"value":33,"text":"Taougrite"},{"value":34,"text":"Dahra"}],[{"value":"","text":""},{"value":0,"text":"Laghouat"},{"value":1,"text":"Aflou"},{"value":2,"text":"Sebgag"},{"value":3,"text":"Sidi bouzid"},{"value":4,"text":"Brida"},{"value":5,"text":"Hadj Mecheri"},{"value":6,"text":"Taouiala"},{"value":7,"text":"Ksar El Hirane"},{"value":8,"text":"Benacer Benchohra"},{"value":9,"text":"A\u00efn Madhi"},{"value":10,"text":"Kheneg"},{"value":11,"text":"El Houita"},{"value":12,"text":"Tadjemout"},{"value":13,"text":"Tadjerouna"},{"value":14,"text":"Hassi Delaa"},{"value":15,"text":"Gueltat Sidi Saad"},{"value":16,"text":"A\u00efn Sidi Ali"},{"value":17,"text":"Beidha"},{"value":18,"text":"Sidi Makhlouf"},{"value":19,"text":"El Assafia"},{"value":20,"text":"Oued Morra"},{"value":21,"text":"El Ghicha"}],[{"value":"","text":""},{"value":0,"text":"Oum El Bouaghi"},{"value":1,"text":"A\u00efn Zitoun"},{"value":2,"text":"A\u00efn Babouche"},{"value":3,"text":"A\u00efn Diss"},{"value":4,"text":"A\u00efn Beida"},{"value":5,"text":"Zorg"},{"value":6,"text":"Berriche"},{"value":7,"text":"Ouled Hamla"},{"value":8,"text":"Ouled Gacem"},{"value":9,"text":"Meskiana"},{"value":10,"text":"Behir Chergui"},{"value":11,"text":"El Ballala"},{"value":12,"text":"Rahia"},{"value":13,"text":"A\u00efn Fakroun"},{"value":14,"text":"Sigus"},{"value":15,"text":"El Amiria"},{"value":16,"text":"Souk Naamane"},{"value":17,"text":"Bir Chouhada"},{"value":18,"text":"Ouled Zaoui"},{"value":19,"text":"A\u00efn Kercha"},{"value":20,"text":"Hanchir Toumghani"},{"value":21,"text":"El Harmilia"},{"value":22,"text":"El Fedjoudj Boughrara Saoudi"},{"value":23,"text":"Oued Nini"},{"value":24,"text":"Dhalaa"},{"value":25,"text":"Djazia"},{"value":26,"text":"Ksar Sbahi"},{"value":27,"text":"Aïn M'lila"},{"value":28,"text":"Fkirina"}],[{"value":"","text":""},{"value":0,"text":"Batna"},{"value":1,"text":"Oued Chaaba"},{"value":2,"text":"Fesdis"},{"value":3,"text":"Ras El Aioun"},{"value":4,"text":"Guigba"},{"value":5,"text":"Gosbat"},{"value":6,"text":"Barika"},{"value":7,"text":"Bitam"},{"value":8,"text":"A\u00efn Touta"},{"value":9,"text":"Ouled Aouf"},{"value":10,"text":"Maafa"},{"value":11,"text":"B\u00e9ni Foudala El Hakania"},{"value":12,"text":"Merouana"},{"value":13,"text":"Hidoussa"},{"value":14,"text":"Ksar Belezma"},{"value":15,"text":"Oued El Ma"},{"value":16,"text":"Boumagueur"},{"value":17,"text":"Sefiane"},{"value":18,"text":"Seriana"},{"value":19,"text":"Lazrou"},{"value":20,"text":"Zana El Beida"},{"value":21,"text":"El Madher"},{"value":22,"text":"Boumia"},{"value":23,"text":"A\u00efn Yagout"},{"value":24,"text":"Djerma"},{"value":25,"text":"Tazoult"},{"value":26,"text":"Ouyoun El Assafir"},{"value":27,"text":"Theniet El Abed"},{"value":28,"text":"Chir"},{"value":29,"text":"Oued Taga"},{"value":30,"text":"Arris"},{"value":31,"text":"Tighanimine"},{"value":32,"text":"Timgad"},{"value":33,"text":"Ouled Fadhel"},{"value":34,"text":"Chemora"},{"value":35,"text":"Boulhilet"},{"value":36,"text":"A\u00efn Djasser"},{"value":37,"text":"El Hassi"},{"value":38,"text":"Ouled Sellem"},{"value":39,"text":"Talkhamt"},{"value":40,"text":"Rahbat"},{"value":41,"text":"Ghassira"},{"value":42,"text":"Kimel"},{"value":43,"text":"Djezzar"},{"value":44,"text":"Ouled Ammar"},{"value":45,"text":"Abdelkader Azil"},{"value":46,"text":"Bouzina"},{"value":47,"text":"Larbaa"},{"value":48,"text":"Menaa"},{"value":49,"text":"Tigherghar"},{"value":50,"text":"Ichmoul"},{"value":51,"text":"Foum Toub"},{"value":52,"text":"Inoughissen"},{"value":53,"text":"Seggana"},{"value":54,"text":"Tilatou"},{"value":55,"text":"Ouled Si Slimane"},{"value":56,"text":"Lemsane"},{"value":57,"text":"Taxlent"}],[{"value":"","text":""},{"value":0,"text":"B\u00e9jaia"},{"value":1,"text":"Oued Ghir"},{"value":2,"text":"Tichy"},{"value":3,"text":"Boukhelifa"},{"value":4,"text":"Tala Hamza"},{"value":5,"text":"Akbou"},{"value":6,"text":"Ighram"},{"value":7,"text":"Tamokra"},{"value":8,"text":"Chellata"},{"value":9,"text":"Amizour"},{"value":10,"text":"B\u00e9ni Djellil"},{"value":11,"text":"Semaoune"},{"value":12,"text":"Ferraoun"},{"value":13,"text":"Adekar"},{"value":14,"text":"Taourirt Ighil"},{"value":15,"text":"B\u00e9ni Ksila"},{"value":16,"text":"Seddouk"},{"value":17,"text":"Amalou"},{"value":18,"text":"Bouhamza"},{"value":19,"text":"Kherrata"},{"value":20,"text":"Draa El Ka\u00efd"},{"value":21,"text":"Sidi A\u00efch"},{"value":22,"text":"Leflaye"},{"value":23,"text":"Thinabdher"},{"value":24,"text":"Tifra"},{"value":25,"text":"Sidi Ayad"},{"value":26,"text":"Timzrit"},{"value":27,"text":"Chemini"},{"value":28,"text":"Souk Oufella"},{"value":29,"text":"Tibane"},{"value":30,"text":"Akfadou"},{"value":31,"text":"Ighil Ali"},{"value":32,"text":"Aitrizine"},{"value":33,"text":"Souk El Tenine"},{"value":34,"text":"Melbou"},{"value":35,"text":"Tamridjet"},{"value":36,"text":"El Kseur"},{"value":37,"text":"Toudja"},{"value":38,"text":"Iflaine El Maten"},{"value":39,"text":"Barbacha"},{"value":40,"text":"Kendira"},{"value":41,"text":"Darguina"},{"value":42,"text":"Taskriout"},{"value":43,"text":"A\u00eft Smail"},{"value":44,"text":"Beni Maouche"},{"value":45,"text":"Aokas"},{"value":46,"text":"Ouzellagu\u00e8ne"},{"value":47,"text":"Tazmalt"},{"value":48,"text":"B\u00e9ni Melikeche"},{"value":49,"text":"Boudjellil"}],[{"value":"","text":""},{"value":0,"text":"Biskra"},{"value":1,"text":"El Hadjeb"},{"value":2,"text":"El Outaya"},{"value":3,"text":"Sidi Okba"},{"value":4,"text":"El Haouch"},{"value":5,"text":"Chetma"},{"value":6,"text":"A\u00efn Naga"},{"value":7,"text":"Tolga"},{"value":8,"text":"Bouchagroun"},{"value":9,"text":"Lichana"},{"value":10,"text":"Bordj Benazzouz"},{"value":11,"text":"Ouled Djellal"},{"value":12,"text":"Doucen"},{"value":13,"text":"Cha\u00efba"},{"value":14,"text":"Ourlal"},{"value":15,"text":"Oumache"},{"value":16,"text":"Lioua"},{"value":17,"text":"Mekhadma"},{"value":18,"text":"Zeribet El Oued"},{"value":19,"text":"El Feidh"},{"value":20,"text":"Khanguet Sidi Nadji"},{"value":21,"text":"Meziraa"},{"value":22,"text":"El Kantara"},{"value":23,"text":"A\u00efn Zaatout"},{"value":24,"text":"Sidi Khaled"},{"value":25,"text":"Besbes"},{"value":26,"text":"Ras El Miaad"},{"value":27,"text":"Foughala"},{"value":28,"text":"El Ghrous"},{"value":29,"text":"Mechoun\u00e8che"},{"value":30,"text":"Djemourah"},{"value":31,"text":"Branis"}],[{"value":"","text":""},{"value":0,"text":"Bechar"},{"value":1,"text":"Kenadsa"},{"value":2,"text":"Meridja"},{"value":3,"text":"Beni Ounif"},{"value":4,"text":"Abadla"},{"value":5,"text":"Mechra Houari Boum\u00e9diene"},{"value":6,"text":"Arg Ferradj"},{"value":7,"text":"B\u00e9ni Abbes"},{"value":8,"text":"Tamtert"},{"value":9,"text":"Kerzaz"},{"value":10,"text":"Timoudi"},{"value":11,"text":"Lahmar"},{"value":12,"text":"Boukais"},{"value":13,"text":"Mougheul"},{"value":14,"text":"Taghit"},{"value":15,"text":"Igli"},{"value":16,"text":"El Ouata"},{"value":17,"text":"Beni Ikhlef"},{"value":18,"text":"Ouled Khodeir"},{"value":19,"text":"Ksabi"},{"value":20,"text":"Tabelbala"}],[{"value":"","text":""},{"value":0,"text":"Blida"},{"value":1,"text":"Bouarfa"},{"value":2,"text":"Boufarik"},{"value":3,"text":"Guerrouaou"},{"value":4,"text":"Soumaa"},{"value":5,"text":"Larbaa"},{"value":6,"text":"Souhane"},{"value":7,"text":"El Affroun"},{"value":8,"text":"Oued Djer"},{"value":9,"text":"Ouled Yaich"},{"value":10,"text":"B\u00e9ni Mered"},{"value":11,"text":"Chr\u00e9a"},{"value":12,"text":"Chebli"},{"value":13,"text":"Bouinan"},{"value":14,"text":"Bougara"},{"value":15,"text":"Hammam El Ouane"},{"value":16,"text":"Ouled Selama"},{"value":17,"text":"Oued El Alleug"},{"value":18,"text":"B\u00e9ni Tamou"},{"value":19,"text":"Ben Khellil"},{"value":20,"text":"Mouza\u00efa"},{"value":21,"text":"Ain Romana"},{"value":22,"text":"Chiffa"},{"value":23,"text":"Meftah"},{"value":24,"text":"Djebabra"}],[{"value":"","text":""},{"value":0,"text":"Bouira"},{"value":1,"text":"A\u00efn Turk"},{"value":2,"text":"A\u00eft Laaziz"},{"value":3,"text":"Lakhdaria"},{"value":4,"text":"Boukram"},{"value":5,"text":"Bouderbala"},{"value":6,"text":"Guerrouma"},{"value":7,"text":"Maala"},{"value":8,"text":"Haizer"},{"value":9,"text":"Taghzout"},{"value":10,"text":"Saharidj"},{"value":11,"text":"Chorfa"},{"value":12,"text":"Aghbalou"},{"value":13,"text":"Hanif"},{"value":14,"text":"Taourirt"},{"value":15,"text":"Sour El Ghozlane"},{"value":16,"text":"Dechmia"},{"value":17,"text":"Ridane"},{"value":18,"text":"Maamora"},{"value":19,"text":"Dirah"},{"value":20,"text":"El Hakimia"},{"value":21,"text":"A\u00efn Bessem"},{"value":22,"text":"A\u00efn Laloui"},{"value":23,"text":"A\u00efn Lahdjar"},{"value":24,"text":"Kadiria"},{"value":25,"text":"Aomar"},{"value":26,"text":"Djebahia"},{"value":27,"text":"Bechloul"},{"value":28,"text":"El Adjiba"},{"value":29,"text":"Ahl El Ksar"},{"value":30,"text":"Ouled Rached"},{"value":31,"text":"El Asnam"},{"value":32,"text":"El Hachimia"},{"value":33,"text":"Oued El Berdi"},{"value":34,"text":"Bordj Okhriss"},{"value":35,"text":"Mesdour"},{"value":36,"text":"Taguedit"},{"value":37,"text":"Hadjra Zerga"},{"value":38,"text":"Bir Ghbalou"},{"value":39,"text":"Raouraoua"},{"value":40,"text":"El Khebouzia"},{"value":41,"text":"Souk El Khemis"},{"value":42,"text":"El Mokrani"}],[{"value":"","text":""},{"value":0,"text":"Tamanghasset"},{"value":1,"text":"In Amguel"},{"value":2,"text":"Tazrouk"},{"value":3,"text":"Idl\u00e8s"},{"value":4,"text":"Silet Abalessa"},{"value":5,"text":"In Guezzam"},{"value":6,"text":"In Salah"},{"value":7,"text":"Foggaret Ezzouaoua"},{"value":8,"text":"Tin Zouatine"},{"value":9,"text":"In Ghar"}],[{"value":"","text":""},{"value":0,"text":"T\u00e9bessa"},{"value":1,"text":"El Kouif"},{"value":2,"text":"Bekkaria"},{"value":3,"text":"Boulhef Dyn"},{"value":4,"text":"Bir El Ater"},{"value":5,"text":"El Ogla El Malha"},{"value":6,"text":"El Aouinet"},{"value":7,"text":"Boukhadra"},{"value":8,"text":"Ch\u00e9ria"},{"value":9,"text":"Thilidj\u00e8ne"},{"value":10,"text":"El Ogla"},{"value":11,"text":"Bedjene"},{"value":12,"text":"El Mezraa"},{"value":13,"text":"Stah Guentis"},{"value":14,"text":"Ouenza"},{"value":15,"text":"El Meridj"},{"value":16,"text":"A\u00efn Zerga"},{"value":17,"text":"Negrine"},{"value":18,"text":"Ferkane"},{"value":19,"text":"El Ma Labiodh"},{"value":20,"text":"Lahouidjbet"},{"value":21,"text":"Bir Mokadem"},{"value":22,"text":"Hammamet"},{"value":23,"text":"Ghorriguer"},{"value":24,"text":"Oum Ali"},{"value":25,"text":"Safsaf El Ouesra"},{"value":26,"text":"Morsott"},{"value":27,"text":"Bir Dheheb"}],[{"value":"","text":""},{"value":0,"text":"Tlemcen"},{"value":1,"text":"Maghnia"},{"value":2,"text":"Hammam Bougherara"},{"value":3,"text":"Ghazaouet"},{"value":4,"text":"Dar Yaghmoracen"},{"value":5,"text":"Souahlia"},{"value":6,"text":"Tianet"},{"value":7,"text":"Sabra"},{"value":8,"text":"Bouhlou"},{"value":9,"text":"Nedroma"},{"value":10,"text":"Djebala"},{"value":11,"text":"Remchi"},{"value":12,"text":"A\u00efn Youcef"},{"value":13,"text":"B\u00e9ni Ouarsous"},{"value":14,"text":"Sebaa Chioukh"},{"value":15,"text":"El Fehoul"},{"value":16,"text":"Sebdou"},{"value":17,"text":"El Gor"},{"value":18,"text":"El Aricha"},{"value":19,"text":"Bab El Assa"},{"value":20,"text":"Souani"},{"value":21,"text":"Souk Thlata"},{"value":22,"text":"Mansourah"},{"value":23,"text":"Terny Beni Hediel"},{"value":24,"text":"A\u00efn Ghoraba"},{"value":25,"text":"B\u00e9ni Mester"},{"value":26,"text":"Oueld Mimoun"},{"value":27,"text":"B\u00e9ni Semiel"},{"value":28,"text":"Oued Lakhdar"},{"value":29,"text":"Sidi Djillali"},{"value":30,"text":"El Bouihi"},{"value":31,"text":"Chetouane"},{"value":32,"text":"A\u00efn Fezza"},{"value":33,"text":"Amieur"},{"value":34,"text":"Honaine"},{"value":35,"text":"B\u00e9ni Khaled"},{"value":36,"text":"B\u00e9ni Snous"},{"value":37,"text":"Azail"},{"value":38,"text":"B\u00e9ni Bahdel"},{"value":39,"text":"B\u00e9ni Boussaid"},{"value":40,"text":"Sidi Medjahed"},{"value":41,"text":"Fellaouc\u00e9ne"},{"value":42,"text":"A\u00efn Kebira"},{"value":43,"text":"A\u00efn Fetah"},{"value":44,"text":"A\u00efn Tallout"},{"value":45,"text":"A\u00efn Nahala"},{"value":46,"text":"Bensekrane"},{"value":47,"text":"Sidi Abdelli"},{"value":48,"text":"Hennaya"},{"value":49,"text":"Zenata"},{"value":50,"text":"Ouled Ryah"}],[{"value":"","text":""},{"value":0,"text":"Tiaret"},{"value":1,"text":"Dahmouni"},{"value":2,"text":"A\u00efn Bouchekif"},{"value":3,"text":"Sougueur"},{"value":4,"text":"Tousnina"},{"value":5,"text":"Si Abdelghani"},{"value":6,"text":"Faidja"},{"value":7,"text":"Ksar Chellala"},{"value":8,"text":"Serguine"},{"value":9,"text":"Zmalet Emir Abdelkader"},{"value":10,"text":"Frenda"},{"value":11,"text":"A\u00efn El Hadid"},{"value":12,"text":"Takhmaret"},{"value":13,"text":"Mahdia"},{"value":14,"text":"Sebaine"},{"value":15,"text":"A\u00efn Dzarit"},{"value":16,"text":"Nadorah"},{"value":17,"text":"Rahouia"},{"value":18,"text":"Guertoufa"},{"value":19,"text":"A\u00efn Kermes"},{"value":20,"text":"Medrissa"},{"value":21,"text":"Sidi Abderrahmane"},{"value":22,"text":"Djebilet Rosfa"},{"value":23,"text":"Madna"},{"value":24,"text":"Mechraa Sfa"},{"value":25,"text":"Djillali Ben Amar"},{"value":26,"text":"Tagdemt"},{"value":27,"text":"Oued Lili"},{"value":28,"text":"Sidi Ali Mellal"},{"value":29,"text":"Tidda"},{"value":30,"text":"Hamadia"},{"value":31,"text":"Bougara"},{"value":32,"text":"Racheiga"},{"value":33,"text":"Medroussa"},{"value":34,"text":"Sidi Bakhti"},{"value":35,"text":"Mellakou"},{"value":36,"text":"Meghila"},{"value":37,"text":"Sebt"},{"value":38,"text":"Sidi Hosni"},{"value":39,"text":"A\u00efn Dheb"},{"value":40,"text":"Chehaima"},{"value":41,"text":"Na\u00efma"}],[{"value":"","text":""},{"value":0,"text":"Tizi Ouzou"},{"value":1,"text":"Ouacif"},{"value":2,"text":"A\u00eft Boumahdi"},{"value":3,"text":"A\u00eft Toudert"},{"value":4,"text":"A\u00efn El Hammam"},{"value":5,"text":"A\u00eft Yahia"},{"value":6,"text":"Akbil"},{"value":7,"text":"Abi Youcef"},{"value":8,"text":"Azzazga"},{"value":9,"text":"Fr\u00e9ha"},{"value":10,"text":"Zekri"},{"value":11,"text":"Yakour\u00e8ne"},{"value":12,"text":"Ifigha"},{"value":13,"text":"Boghni"},{"value":14,"text":"Mechtras"},{"value":15,"text":"Bounouh"},{"value":16,"text":"Assi Youcef"},{"value":17,"text":"Draa El Mizan"},{"value":18,"text":"Frikat"},{"value":19,"text":"A\u00efn Zaouia"},{"value":20,"text":"A\u00eft Yahia Moussa"},{"value":21,"text":"Ouaguenoun"},{"value":22,"text":"Timizart"},{"value":23,"text":"A\u00eft A\u00efssa Mimoun"},{"value":24,"text":"Larbaa Nath Iraten"},{"value":25,"text":"A\u00eft Agouacha"},{"value":26,"text":"Irdjen"},{"value":27,"text":"A\u00eft Oumalou"},{"value":28,"text":"Azzefoun"},{"value":29,"text":"Akerrou"},{"value":30,"text":"A\u00eft Chaffa"},{"value":31,"text":"Aghrib"},{"value":32,"text":"Draa Ben Khedda"},{"value":33,"text":"Tadma\u00eft"},{"value":34,"text":"Sidi Naamane"},{"value":35,"text":"Tirmitine"},{"value":36,"text":"Tigzirt"},{"value":37,"text":"Iflissen"},{"value":38,"text":"Mizrana"},{"value":39,"text":"Bouzegu\u00e8ne"},{"value":40,"text":"Idjeur"},{"value":41,"text":"Illoula Oumalou"},{"value":42,"text":"B\u00e9ni Zeki"},{"value":43,"text":"B\u00e9ni Douala"},{"value":44,"text":"A\u00eft Mahmoud"},{"value":45,"text":"B\u00e9ni A\u00efssi"},{"value":46,"text":"B\u00e9ni Zemenzer"},{"value":47,"text":"Ouadhia"},{"value":48,"text":"Aghni Goughrane"},{"value":49,"text":"A\u00eft Bouadou"},{"value":50,"text":"Maatka"},{"value":51,"text":"Souk El Tenine"},{"value":52,"text":"Mekla"},{"value":53,"text":"A\u00eft Khelili"},{"value":54,"text":"Souamaa"},{"value":55,"text":"B\u00e9ni Yenni"},{"value":56,"text":"Yataf\u00e8ne"},{"value":57,"text":"Iboudrar\u00e8ne"},{"value":58,"text":"Iferhoun\u00e8ne"},{"value":59,"text":"Imsouhal"},{"value":60,"text":"Illilten"},{"value":61,"text":"Tizi Rached"},{"value":62,"text":"Tizi Ghenif"},{"value":63,"text":"Makouda"},{"value":64,"text":"Boudjima"}],[{"value":"","text":""},{"value":0,"text":"Bouzar\u00e9ah"},{"value":1,"text":"Beni Messous"},{"value":2,"text":"Ben Aknoun"},{"value":3,"text":"El Biar"},{"value":4,"text":"Bab El Oued"},{"value":5,"text":"Oued Koriche"},{"value":6,"text":"Bologhine"},{"value":7,"text":"Ra\u00efs Hamidou"},{"value":8,"text":"Casbah"},{"value":9,"text":"Hussein Dey"},{"value":10,"text":"Kouba"},{"value":11,"text":"Mohamed Belouizdad"},{"value":12,"text":"El Magharia"},{"value":13,"text":"Alger Centre"},{"value":14,"text":"El Madania"},{"value":15,"text":"El Mouradia"},{"value":16,"text":"El Harrach"},{"value":17,"text":"Bourouba"},{"value":18,"text":"Bach Djerah"},{"value":19,"text":"Oued Smar"},{"value":20,"text":"Baraki"},{"value":21,"text":"Eucalyptus"},{"value":22,"text":"Sidi Moussa"},{"value":23,"text":"Dar El Be\u00efda"},{"value":24,"text":"Bordj El Bahri"},{"value":25,"text":"Mohammadia"},{"value":26,"text":"Bab Ezzouar"},{"value":27,"text":"Bordj El Kiffan"},{"value":28,"text":"A\u00efn Taya"},{"value":29,"text":"El Marsa"},{"value":30,"text":"Rouiba"},{"value":31,"text":"R\u00e9gha\u00efa"},{"value":32,"text":"Heraoua"},{"value":33,"text":"Zeralda"},{"value":34,"text":"Staou\u00e9li"},{"value":35,"text":"Souidania"},{"value":36,"text":"Mahelma"},{"value":37,"text":"Rahmania"},{"value":38,"text":"Ch\u00e9raga"},{"value":39,"text":"Ouled Fayet"},{"value":40,"text":"A\u00efn B\u00e9nian"},{"value":41,"text":"D\u00e8ly Brahim"},{"value":42,"text":"Hammamet"},{"value":43,"text":"Draria"},{"value":44,"text":"Khra\u00efssia"},{"value":45,"text":"Dou\u00e9ra"},{"value":46,"text":"Baba Hac\u00e8ne"},{"value":47,"text":"El Achour"},{"value":48,"text":"Birtouta"},{"value":49,"text":"Ouled Chebel"},{"value":50,"text":"Tessala El Merdja"},{"value":51,"text":"Bir Mourad Ra\u00efs"},{"value":52,"text":"Birkhadem"},{"value":53,"text":"Djasr Ka\u00e7entina"},{"value":54,"text":"Saoula"},{"value":55,"text":"Hydra"}],[{"value":"","text":""},{"value":0,"text":"Djelfa"},{"value":1,"text":"Hassi Bahbah"},{"value":2,"text":"A\u00efn Maabed"},{"value":3,"text":"Hassi El Euch"},{"value":4,"text":"Zaafrane"},{"value":5,"text":"El Idrissia"},{"value":6,"text":"Douis"},{"value":7,"text":"A\u00efn Echouhada"},{"value":8,"text":"A\u00efn Oussera"},{"value":9,"text":"El Guernini"},{"value":10,"text":"Birine"},{"value":11,"text":"Ben Nahar"},{"value":12,"text":"A\u00efn El Ibel"},{"value":13,"text":"Mouadjebar"},{"value":14,"text":"Tadmit"},{"value":15,"text":"Zaccar"},{"value":16,"text":"Messaad"},{"value":17,"text":"Guettara"},{"value":18,"text":"Selmana"},{"value":19,"text":"Deldoul"},{"value":20,"text":"Sed Rahal"},{"value":21,"text":"Dar Chioukh"},{"value":22,"text":"Sidi Baizid"},{"value":23,"text":"Charef"},{"value":24,"text":"El Guedid"},{"value":25,"text":"Ben Yacoub"},{"value":26,"text":"Faidh El Botma"},{"value":27,"text":"Oum El Adham"},{"value":28,"text":"Amourah"},{"value":29,"text":"Sidi Ladjel"},{"value":30,"text":"Hassi Fedoul"},{"value":31,"text":"El Khemis"},{"value":32,"text":"Had Sahary"},{"value":33,"text":"A\u00efn Feka"},{"value":34,"text":"Bouira Lahdeb"}],[{"value":"","text":""},{"value":0,"text":"Jijel"},{"value":1,"text":"El Milia"},{"value":2,"text":"Ouled Yahia Khadrouche"},{"value":3,"text":"El Ancer"},{"value":4,"text":"Khier Oued Adjoul"},{"value":5,"text":"El Djemaa Beni Habibi"},{"value":6,"text":"Bouraoui Belhadef"},{"value":7,"text":"Taher"},{"value":8,"text":"Chahna"},{"value":9,"text":"Ouadjana"},{"value":10,"text":"Emir Abdelkader"},{"value":11,"text":"Boucif Ouled Askeur"},{"value":12,"text":"Texenna"},{"value":13,"text":"Kaous"},{"value":14,"text":"El Aouana"},{"value":15,"text":"Selma Ben Ziada"},{"value":16,"text":"Ziamah Mansouriah"},{"value":17,"text":"Erragu\u00e8ne"},{"value":18,"text":"Sidi Marouf"},{"value":19,"text":"Ouled Rabah"},{"value":20,"text":"Chekfa"},{"value":21,"text":"El Kennar Nouchfi"},{"value":22,"text":"Sidi Abdelaziz"},{"value":23,"text":"Settara"},{"value":24,"text":"Ghebala"},{"value":25,"text":"Jimla"},{"value":26,"text":"Boudria Beniyadjis"}],[{"value":"","text":""},{"value":0,"text":"S\u00e9tif"},{"value":1,"text":"A\u00efn Arnat"},{"value":2,"text":"A\u00efn Abessa"},{"value":3,"text":"El Ouricia"},{"value":4,"text":"Mezloug"},{"value":5,"text":"Beni Aziz"},{"value":6,"text":"A\u00efn Sebt"},{"value":7,"text":"Maaouia"},{"value":8,"text":"Beni Ourtilane"},{"value":9,"text":"Ain Legradj"},{"value":10,"text":"Beni Chebana"},{"value":11,"text":"Beni Mouhli"},{"value":12,"text":"Bouandas"},{"value":13,"text":"Bousselam"},{"value":14,"text":"A\u00eft Tizi"},{"value":15,"text":"A\u00efn Oulm\u00e8ne"},{"value":16,"text":"Ouled Si Ahmed"},{"value":17,"text":"Kasr El Abtal"},{"value":18,"text":"Guellal"},{"value":19,"text":"A\u00efn Azel"},{"value":20,"text":"Beida Bordj"},{"value":21,"text":"A\u00efn Lahdjar"},{"value":22,"text":"Bir Heddada"},{"value":23,"text":"El Eulma"},{"value":24,"text":"Bazer Sakra"},{"value":25,"text":"Guelta Zerga"},{"value":26,"text":"Bougaa"},{"value":27,"text":"Beni Oussine"},{"value":28,"text":"A\u00efn Roua"},{"value":29,"text":"A\u00efn El Kebira"},{"value":30,"text":"Dehamcha"},{"value":31,"text":"Ouled Addouane"},{"value":32,"text":"Salah Bey"},{"value":33,"text":"Hamma"},{"value":34,"text":"Ouled Tebben"},{"value":35,"text":"Rasfa"},{"value":36,"text":"Boutaleb"},{"value":37,"text":"Hammam Guergour"},{"value":38,"text":"Draa Kebila"},{"value":39,"text":"Amoucha"},{"value":40,"text":"Oued Bared"},{"value":41,"text":"Guijel"},{"value":42,"text":"Ouled Sabor"},{"value":43,"text":"Babor"},{"value":44,"text":"Serdj El Ghoul"},{"value":45,"text":"Hammam Sokhna"},{"value":46,"text":"Taya"},{"value":47,"text":"Telaa"},{"value":48,"text":"Djemila"},{"value":49,"text":"Beni Foudda"},{"value":50,"text":"Maoklane"},{"value":51,"text":"Tala Ifac\u00e8ne"},{"value":52,"text":"Guenzet"},{"value":53,"text":"Harbil"},{"value":54,"text":"Bir El Arch"},{"value":55,"text":"Belaa"},{"value":56,"text":"El Ouldja"},{"value":57,"text":"Tachouda"}],[{"value":"","text":""},{"value":0,"text":"Sa\u00efda"},{"value":1,"text":"A\u00efn El Hadjar"},{"value":2,"text":"Moulaya Larbi"},{"value":3,"text":"Sidi Ahmed"},{"value":4,"text":"Al Hassasna"},{"value":5,"text":"Maamora"},{"value":6,"text":"A\u00efn Skhouna"},{"value":7,"text":"Sidi Boubekeur"},{"value":8,"text":"Ouled Khaled"},{"value":9,"text":"Sidi Ammar"},{"value":10,"text":"Hounet"},{"value":11,"text":"Youb"},{"value":12,"text":"Doui Tabet"},{"value":13,"text":"Ouled Brahim"},{"value":14,"text":"Tircine"},{"value":15,"text":"A\u00efn Soltane"}],[{"value":"","text":""},{"value":0,"text":"Skikda"},{"value":1,"text":"Filfila"},{"value":2,"text":"Hammadi Krouma"},{"value":3,"text":"Azzaba"},{"value":4,"text":"Djendel Saadi Mohamed"},{"value":5,"text":"Essebt"},{"value":6,"text":"El Ghedir"},{"value":7,"text":"A\u00efn Cherchar"},{"value":8,"text":"Ramdane Djamel"},{"value":9,"text":"Beni Bachir"},{"value":10,"text":"El Harrouch"},{"value":11,"text":"Zardezas"},{"value":12,"text":"Salah Bouchaour"},{"value":13,"text":"Ouled Hebaba"},{"value":14,"text":"Emdjez Edchich"},{"value":15,"text":"Tamalous"},{"value":16,"text":"Bein El Ouiden"},{"value":17,"text":"Kerkera"},{"value":18,"text":"Collo"},{"value":19,"text":"Beni Zid"},{"value":20,"text":"Cheraia"},{"value":21,"text":"Benazouz"},{"value":22,"text":"El Marsa"},{"value":23,"text":"Bekkouche Lakhdar"},{"value":24,"text":"El Hadaiek"},{"value":25,"text":"Ain Zouit"},{"value":26,"text":"Bouchtata"},{"value":27,"text":"Zitouna"},{"value":28,"text":"Kenoua"},{"value":29,"text":"Sidi Mezghiche"},{"value":30,"text":"A\u00efn Bouziane"},{"value":31,"text":"Beni Oulbane"},{"value":32,"text":"Oum Toub"},{"value":33,"text":"Ouled Atia"},{"value":34,"text":"Khenag Mayoun"},{"value":35,"text":"A\u00efn Kechera"},{"value":36,"text":"Ouldja Boulballout"}],[{"value":"","text":""},{"value":0,"text":"Sidi Bel Abbes"},{"value":1,"text":"Sidi Lahc\u00e8ne"},{"value":2,"text":"Sidi Khaled"},{"value":3,"text":"Amarnas"},{"value":4,"text":"Sidi Yacoub"},{"value":5,"text":"Ben Badis"},{"value":6,"text":"Hassi Zehana"},{"value":7,"text":"Badradine El Mokrani"},{"value":8,"text":"Chetouane Belaila"},{"value":9,"text":"Sfisef"},{"value":10,"text":"Boudjebaa El Bordj"},{"value":11,"text":"A\u00efn Adden"},{"value":12,"text":"Telagh"},{"value":13,"text":"Teghelimet"},{"value":14,"text":"Dhaya"},{"value":15,"text":"Mezaourou"},{"value":16,"text":"Ras El Ma"},{"value":17,"text":"Oued Sebaa"},{"value":18,"text":"Redjem Demouche"},{"value":19,"text":"Tenira"},{"value":20,"text":"Oued Sefioune"},{"value":21,"text":"Hassi Daho"},{"value":22,"text":"Benachiba Chelia"},{"value":23,"text":"A\u00efn El Berd"},{"value":24,"text":"Makedra"},{"value":25,"text":"Sidi Hamadouche"},{"value":26,"text":"Sidi Brahim"},{"value":27,"text":"Moulay Slissen"},{"value":28,"text":"Ha\u00e7aiba"},{"value":29,"text":"A\u00efn Tidamine"},{"value":30,"text":"Marhoum"},{"value":31,"text":"Sidi Cha\u00efb"},{"value":32,"text":"Sidi Ali Boussidi"},{"value":33,"text":"Lemtar"},{"value":34,"text":"A\u00efn Kada"},{"value":35,"text":"Sidi Dahou Dezairs"},{"value":36,"text":"Mostefa Ben Brahim"},{"value":37,"text":"Belarbi"},{"value":38,"text":"Tilmouni"},{"value":39,"text":"Zerrouala"},{"value":40,"text":"Merine"},{"value":41,"text":"Oued Taourira"},{"value":42,"text":"Taoudmout"},{"value":43,"text":"Tafessour"},{"value":44,"text":"Tessala"},{"value":45,"text":"A\u00efn Thrid"},{"value":46,"text":"Sehala Thaoura"},{"value":47,"text":"Sidi Ali Ben Youb"},{"value":48,"text":"Boukhenefis"},{"value":49,"text":"Tabia"}],[{"value":"","text":""},{"value":0,"text":"Annaba"},{"value":1,"text":"Sera\u00efdi"},{"value":2,"text":"El Hadjar"},{"value":3,"text":"Sidi Amar"},{"value":4,"text":"Berrahal"},{"value":5,"text":"Oued El Aneb"},{"value":6,"text":"Treat"},{"value":7,"text":"El Bouni"},{"value":8,"text":"Cheta\u00efbi"},{"value":9,"text":"A\u00efn El Berda"},{"value":10,"text":"El Eulma"},{"value":11,"text":"Chorfa"}],[{"value":"","text":""},{"value":0,"text":"Guelma"},{"value":1,"text":"Badjarah"},{"value":2,"text":"Guelaat Bousbaa"},{"value":3,"text":"Nechmaya"},{"value":4,"text":"Djebala Khemissi"},{"value":5,"text":"Boumahra Ahmed"},{"value":6,"text":"Beni Mezline"},{"value":7,"text":"Belkheir"},{"value":8,"text":"Bouchegouf"},{"value":9,"text":"Medjez Sfa"},{"value":10,"text":"Oued Fraga"},{"value":11,"text":"A\u00efn Ben Beida"},{"value":12,"text":"Khzara"},{"value":13,"text":"Bouhachana"},{"value":14,"text":"A\u00efn Sandel"},{"value":15,"text":"Oued Zenati"},{"value":16,"text":"A\u00efn Regada"},{"value":17,"text":"Bordj Sabat"},{"value":18,"text":"Hammam Debagh"},{"value":19,"text":"Bouhamdane"},{"value":20,"text":"Roknia"},{"value":21,"text":"Heliopolis"},{"value":22,"text":"El Fedjoudj"},{"value":23,"text":"Bouati Mahmoud"},{"value":24,"text":"Oued Cheham"},{"value":25,"text":"Dahouara"},{"value":26,"text":"A\u00efn Makhlouf"},{"value":27,"text":"A\u00efn Larbi"},{"value":28,"text":"Tamlouka"},{"value":29,"text":"Houari Boumediene"},{"value":30,"text":"Medjez Amar"},{"value":31,"text":"Ras El Agba"},{"value":32,"text":"Sellaoua Announa"}],[{"value":"","text":""},{"value":0,"text":"Constantine"},{"value":1,"text":"El Khroub"},{"value":2,"text":"Ouled Rahmoun"},{"value":3,"text":"A\u00efn Smara"},{"value":4,"text":"Zighoud Youcef"},{"value":5,"text":"Beni Hamidane"},{"value":6,"text":"A\u00efn Abid"},{"value":7,"text":"Ben Badis"},{"value":8,"text":"Hamma Bouziane"},{"value":9,"text":"Didouche Mourad"},{"value":10,"text":"Ibn Ziad"},{"value":11,"text":"Messaoud Boudjeriou"}],[{"value":"","text":""},{"value":0,"text":"M\u00e9d\u00e9a"},{"value":1,"text":"Draa Essamar"},{"value":2,"text":"Tamesguida"},{"value":3,"text":"Ouzera"},{"value":4,"text":"El Hamdania"},{"value":5,"text":"Tizi Mahdi"},{"value":6,"text":"Benchicao"},{"value":7,"text":"Berrouaghia"},{"value":8,"text":"Ouled Deide"},{"value":9,"text":"Rebaia"},{"value":10,"text":"Ksar El Boukhari"},{"value":11,"text":"Saneg"},{"value":12,"text":"Meftaha"},{"value":13,"text":"El Omaria"},{"value":14,"text":"Ouled Brahim"},{"value":15,"text":"Baata"},{"value":16,"text":"A\u00efn Boucif"},{"value":17,"text":"El Aouinet"},{"value":18,"text":"Ouled Maref"},{"value":19,"text":"Kef Lakhdar"},{"value":20,"text":"Sidi Damed"},{"value":21,"text":"Tablat"},{"value":22,"text":"Deux Bassins"},{"value":23,"text":"Mezghana"},{"value":24,"text":"El A\u00efssaouia"},{"value":25,"text":"Beni Slimane"},{"value":26,"text":"Sidi Rabie"},{"value":27,"text":"Bousekene"},{"value":28,"text":"Si Mahdjoub"},{"value":29,"text":"Ouled Bouachra"},{"value":30,"text":"Bouaichoune"},{"value":31,"text":"Seghouane"},{"value":32,"text":"Zoubiria"},{"value":33,"text":"Tlelat Ed Douair"},{"value":34,"text":"Medjebeur"},{"value":35,"text":"Aziz"},{"value":36,"text":"Derrag"},{"value":37,"text":"Oum El Djallil"},{"value":38,"text":"Chellalat El Adhaoura"},{"value":39,"text":"Tafraout"},{"value":40,"text":"Cheniguel"},{"value":41,"text":"A\u00efn Ouksir"},{"value":42,"text":"El Azizia"},{"value":43,"text":"Maghraoua"},{"value":44,"text":"Mihoub"},{"value":45,"text":"Souaghi"},{"value":46,"text":"Sidi Ziane"},{"value":47,"text":"Sidi Zahar"},{"value":48,"text":"Djouab"},{"value":49,"text":"Chahbounia"},{"value":50,"text":"Boughezoul"},{"value":51,"text":"Bouaiche"},{"value":52,"text":"Ouamri"},{"value":53,"text":"Oued Harbil"},{"value":54,"text":"Hanacha"},{"value":55,"text":"Ouled Antar"},{"value":56,"text":"Boghar"},{"value":57,"text":"Ouled Hellal"},{"value":58,"text":"Guelb El Kebir"},{"value":59,"text":"Sedraya"},{"value":60,"text":"Bir Ben Abed"},{"value":61,"text":"Sidi Naamane"},{"value":62,"text":"Bouchrahil"},{"value":63,"text":"Khams Djouamaa"}],[{"value":"","text":""},{"value":0,"text":"Mostaganem"},{"value":1,"text":"Hassi Mameche"},{"value":2,"text":"Stidia"},{"value":3,"text":"Mezeghrane"},{"value":4,"text":"A\u00efn T\u00e9deles"},{"value":5,"text":"Sour"},{"value":6,"text":"Sidi Bellatar"},{"value":7,"text":"Oued El Kheir"},{"value":8,"text":"Bouguirat"},{"value":9,"text":"Souaflia"},{"value":10,"text":"Sirat"},{"value":11,"text":"Saf Saf"},{"value":12,"text":"Sidi Ali"},{"value":13,"text":"Tazgait"},{"value":14,"text":"Ouled Maalah"},{"value":15,"text":"Achacha"},{"value":16,"text":"Nekmaria"},{"value":17,"text":"Khadra"},{"value":18,"text":"Ouled Boughalem"},{"value":19,"text":"A\u00efn Nouicy"},{"value":20,"text":"Fornaka"},{"value":21,"text":"El Hassaine"},{"value":22,"text":"Masra"},{"value":23,"text":"A\u00efn Sidi Chrif"},{"value":24,"text":"Touahria"},{"value":25,"text":"Mansoura"},{"value":26,"text":"Kheir Eddine"},{"value":27,"text":"A\u00efn Boudinar"},{"value":28,"text":"Sayada"},{"value":29,"text":"Sidi Lakhdar"},{"value":30,"text":"Hadjadj"},{"value":31,"text":"Benabdelmalek Ramdane"}],[{"value":"","text":""},{"value":0,"text":"Hammam Dhalaa"},{"value":1,"text":"Ouanougha"},{"value":2,"text":"Tarmount"},{"value":3,"text":"Ouled Mansour"},{"value":4,"text":"Ouled Derradj"},{"value":5,"text":"Maadid"},{"value":6,"text":"Souamaa"},{"value":7,"text":"Metarfa"},{"value":8,"text":"Ouled Addi Guebala"},{"value":9,"text":"Sidi A\u00efssa"},{"value":10,"text":"Beni Ilmene"},{"value":11,"text":"Bouti Sayah"},{"value":12,"text":"A\u00efn El Melh"},{"value":13,"text":"A\u00efn Rich"},{"value":14,"text":"A\u00efn Fares"},{"value":15,"text":"Bir Foda"},{"value":16,"text":"Bensrour"},{"value":17,"text":"Ouled Slimane"},{"value":18,"text":"Mohammed Boudiaf"},{"value":19,"text":"Zarzour"},{"value":20,"text":"Boussaada"},{"value":21,"text":"Oultene"},{"value":22,"text":"El Hamel"},{"value":23,"text":"El Houamed"},{"value":24,"text":"Ouled Sidi Brahim"},{"value":25,"text":"Benzouh"},{"value":26,"text":"Sidi Ameur"},{"value":27,"text":"Temsa"},{"value":28,"text":"Magra"},{"value":29,"text":"Belaiba"},{"value":30,"text":"Berhoum"},{"value":31,"text":"A\u00efn El Khadra"},{"value":32,"text":"Dehahna"},{"value":33,"text":"Chellal"},{"value":34,"text":"Ouled Mahdi"},{"value":35,"text":"Khatouti Sed El Djir"},{"value":36,"text":"Maarif"},{"value":37,"text":"Khoubana"},{"value":38,"text":"Medjedel"},{"value":39,"text":"Menaa"},{"value":40,"text":"A\u00efn El Hadjel"},{"value":41,"text":"Sidi Hadjeres"},{"value":42,"text":"Djebel Messaad"},{"value":43,"text":"Slim"},{"value":44,"text":"M'Sila"}],[{"value":"","text":""},{"value":0,"text":"Mascara"},{"value":1,"text":"Bouhanifia"},{"value":2,"text":"Hacine"},{"value":3,"text":"El Gueithna"},{"value":4,"text":"Tighenif"},{"value":5,"text":"Sehailia"},{"value":6,"text":"Sidi Kada"},{"value":7,"text":"Ghriss"},{"value":8,"text":"Maoussa"},{"value":9,"text":"Matemore"},{"value":10,"text":"Sidi Boussa\u00efd"},{"value":11,"text":"Makdha"},{"value":12,"text":"Mohammedia"},{"value":13,"text":"El Ghomri"},{"value":14,"text":"Sidi Abdelmoum\u00e8ne"},{"value":15,"text":"Sedjerara"},{"value":16,"text":"Mocta Douz"},{"value":17,"text":"Ferraguig"},{"value":18,"text":"Sig"},{"value":19,"text":"Chorfa"},{"value":20,"text":"Bou Henni"},{"value":21,"text":"Rachem"},{"value":22,"text":"Zelamta"},{"value":23,"text":"Nesmoth"},{"value":24,"text":"Zahana"},{"value":25,"text":"El Gaada"},{"value":26,"text":"El Bordj"},{"value":27,"text":"El Menaouer"},{"value":28,"text":"Khalouia"},{"value":29,"text":"A\u00efn Fares"},{"value":30,"text":"Mamounia"},{"value":31,"text":"Aouf"},{"value":32,"text":"Benian"},{"value":33,"text":"Gharouss"},{"value":34,"text":"Oued El Abtal"},{"value":35,"text":"A\u00efn Ferah"},{"value":36,"text":"Sidi Abdeldjebar"},{"value":37,"text":"Tizi"},{"value":38,"text":"El Keurt"},{"value":39,"text":"Froha"},{"value":40,"text":"Oued Taria"},{"value":41,"text":"Guerdjoum"},{"value":42,"text":"Oggaz"},{"value":43,"text":"Ras A\u00efn Amirouche"},{"value":44,"text":"El Alaimia"},{"value":45,"text":"A\u00efn Fekkan"},{"value":46,"text":"A\u00efn Frass"}],[{"value":"","text":""},{"value":0,"text":"Ouargla"},{"value":1,"text":"Ruissat"},{"value":2,"text":"Touggourt"},{"value":3,"text":"Nezla"},{"value":4,"text":"Tebesbest"},{"value":5,"text":"Zaouia El Abidia"},{"value":6,"text":"El Hadjira"},{"value":7,"text":"El Alia"},{"value":8,"text":"Ta\u00efbet"},{"value":9,"text":"Bennaceur"},{"value":10,"text":"Hassi Messaoud"},{"value":11,"text":"Sidi Khouiled"},{"value":12,"text":"A\u00efn Beida"},{"value":13,"text":"Hassi Ben Abdellah"},{"value":14,"text":"Megarine"},{"value":15,"text":"Sidi Slimane"},{"value":16,"text":"Temacine"},{"value":17,"text":"Blidate Ameur"},{"value":18,"text":"El Borma"}],[{"value":"","text":""},{"value":0,"text":"Oran"},{"value":1,"text":"Es Senia"},{"value":2,"text":"El Kerma"},{"value":3,"text":"Sidi Chahmi"},{"value":4,"text":"A\u00efn Turk"},{"value":5,"text":"Mers El Kebir"},{"value":6,"text":"Bousfer"},{"value":7,"text":"El An\u00e7ar"},{"value":8,"text":"Arzew"},{"value":9,"text":"Sidi Benyebka"},{"value":10,"text":"Boutelelis"},{"value":11,"text":"A\u00efn El Kerma"},{"value":12,"text":"Misserghin"},{"value":13,"text":"Bethioua"},{"value":14,"text":"Mersa El Hadjadj"},{"value":15,"text":"A\u00efn Biya"},{"value":16,"text":"Gdyel"},{"value":17,"text":"Hassi Mefsoukh"},{"value":18,"text":"Ben Freha"},{"value":19,"text":"Oued Tlelat"},{"value":20,"text":"Tafraoui"},{"value":21,"text":"El Braya"},{"value":22,"text":"Boufatis"},{"value":23,"text":"Bir El Djir"},{"value":24,"text":"Hassi Bounif"},{"value":25,"text":"Hassi Benokba"}],[{"value":"","text":""},{"value":0,"text":"El Bayadh"},{"value":1,"text":"Bougtoub"},{"value":2,"text":"El Kheiter"},{"value":3,"text":"Tousmouline"},{"value":4,"text":"Boualem"},{"value":5,"text":"Sidi Taifour"},{"value":6,"text":"Sidi Amar"},{"value":7,"text":"Stitten"},{"value":8,"text":"Sidi Slimane"},{"value":9,"text":"Labiodh Sidi Cheikh"},{"value":10,"text":"El Bnoud"},{"value":11,"text":"Arbaout"},{"value":12,"text":"A\u00efn El Orak"},{"value":13,"text":"Rogassa"},{"value":14,"text":"Cheguig"},{"value":15,"text":"Kef Lahmar"},{"value":16,"text":"Brezina"},{"value":17,"text":"Ghassoul"},{"value":18,"text":"Krakda"},{"value":19,"text":"Boussemghoum"},{"value":20,"text":"Chellala"},{"value":21,"text":"El Mehara"}],[{"value":"","text":""},{"value":0,"text":"Illizi"},{"value":1,"text":"Djanet"},{"value":2,"text":"Bordj El Houasse"},{"value":3,"text":"In Amenas"},{"value":4,"text":"Bordj Omar Driss"},{"value":5,"text":"Debdeb"}],[{"value":"","text":""},{"value":0,"text":"Bordj Bou Arr\u00e9ridj"},{"value":1,"text":"Medjana"},{"value":2,"text":"Teniet En Nasr"},{"value":3,"text":"Hasnaoua"},{"value":4,"text":"El Achir"},{"value":5,"text":"Mansourah"},{"value":6,"text":"Ben Daoud"},{"value":7,"text":"Haraza"},{"value":8,"text":"El Mehir"},{"value":9,"text":"Ouled Sidi Brahim"},{"value":10,"text":"Ras El Oued"},{"value":11,"text":"Ouled Braham"},{"value":12,"text":"A\u00efn Tesra"},{"value":13,"text":"Bordj Ghdir"},{"value":14,"text":"Ghilassa"},{"value":15,"text":"Belimour"},{"value":16,"text":"El Anceur"},{"value":17,"text":"Taglait"},{"value":18,"text":"El Hamadia"},{"value":19,"text":"El Ach"},{"value":20,"text":"Rabta"},{"value":21,"text":"Ksour"},{"value":22,"text":"Bir Kasdali"},{"value":23,"text":"Khelil"},{"value":24,"text":"Bordj Zemmoura"},{"value":25,"text":"Tasmart"},{"value":26,"text":"Ouled Dahmane"},{"value":27,"text":"Djaafra"},{"value":28,"text":"El Main"},{"value":29,"text":"Tafreg"},{"value":30,"text":"Colla"},{"value":31,"text":"Ain Taghrout"},{"value":32,"text":"Tixter"}],[{"value":"","text":""},{"value":0,"text":"Boumerdes"},{"value":1,"text":"Corso"},{"value":2,"text":"Tidjelabine"},{"value":3,"text":"Bordj Mena\u00efel"},{"value":4,"text":"Djinet"},{"value":5,"text":"Lagata"},{"value":6,"text":"Zemmouri"},{"value":7,"text":"Boudouaou"},{"value":8,"text":"El Kharouba"},{"value":9,"text":"Keddara"},{"value":10,"text":"Ouled Hadjadj"},{"value":11,"text":"Boudouaou El Bahri"},{"value":12,"text":"Dellys"},{"value":13,"text":"Taourga"},{"value":14,"text":"Benchoud"},{"value":15,"text":"Afir"},{"value":16,"text":"Thenia"},{"value":17,"text":"Souk El Had"},{"value":18,"text":"Beni Amrane"},{"value":19,"text":"Ammal"},{"value":20,"text":"Isser"},{"value":21,"text":"Chaabet El Ameur"},{"value":22,"text":"Timezrit"},{"value":23,"text":"Si Mustapha"},{"value":24,"text":"Khemis El Khechna"},{"value":25,"text":"Hammedi"},{"value":26,"text":"Larbatache"},{"value":27,"text":"Ouled Moussa"},{"value":28,"text":"Naciria"},{"value":29,"text":"Baghlia"},{"value":30,"text":"Ouled A\u00efssa"},{"value":31,"text":"Sidi Daoud"}],[{"value":"","text":""},{"value":0,"text":"El Tarf"},{"value":1,"text":"A\u00efn El Assel"},{"value":2,"text":"Bouggous"},{"value":3,"text":"Zitouna"},{"value":4,"text":"Drean"},{"value":5,"text":"Chbaita Mokhtar"},{"value":6,"text":"Chihani"},{"value":7,"text":"Chatt"},{"value":8,"text":"Berrihane"},{"value":9,"text":"Bouhadjar"},{"value":10,"text":"Oued Zitoun"},{"value":11,"text":"A\u00efn Karma"},{"value":12,"text":"Hammam Beni Salah"},{"value":13,"text":"El Kala"},{"value":14,"text":"Souarekh"},{"value":15,"text":"El A\u00efoun"},{"value":16,"text":"Raml Essouk"},{"value":17,"text":"Besbes"},{"value":18,"text":"Zerizer"},{"value":19,"text":"Asfour"},{"value":20,"text":"Bouteldja"},{"value":21,"text":"Lac Des Oiseaux"},{"value":22,"text":"Cheffia"},{"value":23,"text":"Ben Mehidi"}],[{"value":"","text":""},{"value":0,"text":"Tindouf"},{"value":1,"text":"Oum El Assel"}],[{"value":"","text":""},{"value":0,"text":"Tissemsilt"},{"value":1,"text":"Ouled Bessem"},{"value":2,"text":"Khemisti"},{"value":3,"text":"Layoun"},{"value":4,"text":"Theniet ElHad"},{"value":5,"text":"Sidi Boutouchent"},{"value":6,"text":"Bordj Bou Naama"},{"value":7,"text":"Sidi Slimane"},{"value":8,"text":"B\u00e9ni Cha\u00efb"},{"value":9,"text":"B\u00e9ni Lahc\u00e8ne"},{"value":10,"text":"Lardjem"},{"value":11,"text":"Sidi Lantri"},{"value":12,"text":"Melaab"},{"value":13,"text":"Tamelaht"},{"value":14,"text":"Lazharia"},{"value":15,"text":"Bouka\u00efd"},{"value":16,"text":"Larbaa"},{"value":17,"text":"Ammari"},{"value":18,"text":"Sidi Abed"},{"value":19,"text":"Maa\u00e7em"},{"value":20,"text":"Bordj Emir Abdelkader"},{"value":21,"text":"Youssoufia"}],[{"value":"","text":""},{"value":0,"text":"El Oued"},{"value":1,"text":"Kouinine"},{"value":2,"text":"Djamaa"},{"value":3,"text":"Sidi Amrane"},{"value":4,"text":"Tinedla"},{"value":5,"text":"Taleb Larbi"},{"value":6,"text":"Douar El Ma"},{"value":7,"text":"Ben Guecha"},{"value":8,"text":"Debila"},{"value":9,"text":"Hassani Abdelkrim"},{"value":10,"text":"Guemar"},{"value":11,"text":"Taghzout"},{"value":12,"text":"Ourmes"},{"value":13,"text":"El Meghaier"},{"value":14,"text":"Sidi Khelil"},{"value":15,"text":"Oum Touyour"},{"value":16,"text":"Still"},{"value":17,"text":"Robbah"},{"value":18,"text":"El Ogla"},{"value":19,"text":"Nakhla"},{"value":20,"text":"Hassi Khelifa"},{"value":21,"text":"Trifaoui"},{"value":22,"text":"Magrane"},{"value":23,"text":"Sidi Aoun"},{"value":24,"text":"Bayadha"},{"value":25,"text":"Reguiba"},{"value":26,"text":"Hamraia"},{"value":27,"text":"Mih Ouensa"},{"value":28,"text":"Oued Allenda"}],[{"value":"","text":""},{"value":0,"text":"Khenchela"},{"value":1,"text":"Ka\u00efs"},{"value":2,"text":"Remila"},{"value":3,"text":"Taouzinet"},{"value":4,"text":"El Hamma"},{"value":5,"text":"Tamza"},{"value":6,"text":"Ensigha"},{"value":7,"text":"Baghai"},{"value":8,"text":"Chechar"},{"value":9,"text":"Djellal"},{"value":10,"text":"Khairane"},{"value":11,"text":"El Ouldja"},{"value":12,"text":"Bouhmama"},{"value":13,"text":"Chellia"},{"value":14,"text":"Yabous"},{"value":15,"text":"A\u00efn Touila"},{"value":16,"text":"Ouled Rechache"},{"value":17,"text":"El Mahamel"},{"value":18,"text":"Babar"}],[{"value":"","text":""},{"value":0,"text":"Souk Ahras"},{"value":1,"text":"Merahna"},{"value":2,"text":"Ouillen"},{"value":3,"text":"Sidi Fredj"},{"value":4,"text":"Sedrata"},{"value":5,"text":"Khemissa"},{"value":6,"text":"A\u00efn Soltane"},{"value":7,"text":"Tiffech"},{"value":8,"text":"Ragouba"},{"value":9,"text":"Taoura"},{"value":10,"text":"Zaarouria"},{"value":11,"text":"Drea"},{"value":12,"text":"Ouled Driss"},{"value":13,"text":"A\u00efn Zana"},{"value":14,"text":"Haddada"},{"value":15,"text":"Khedara"},{"value":16,"text":"Ouled Moumen"},{"value":17,"text":"Mechroha"},{"value":18,"text":"Hannencha"},{"value":19,"text":"Bir Bouhouche"},{"value":20,"text":"Zouabi"},{"value":21,"text":"Safel Ouiden"},{"value":22,"text":"Oum El Adhaim"},{"value":23,"text":"Terraguelt"},{"value":24,"text":"Oued Kebrit"}],[{"value":"","text":""},{"value":0,"text":"Tipaza"},{"value":1,"text":"Cherchell"},{"value":2,"text":"Sidi Ghilesse"},{"value":3,"text":"Hadjrat Nouss"},{"value":4,"text":"Sidi Semiane"},{"value":5,"text":"Kol\u00e9a"},{"value":6,"text":"Chaiba"},{"value":7,"text":"Hattatba"},{"value":8,"text":"Hadjout"},{"value":9,"text":"Merad"},{"value":10,"text":"Gouraya"},{"value":11,"text":"Messelmoun"},{"value":12,"text":"Aghbal"},{"value":13,"text":"Fouka"},{"value":14,"text":"Douaouda"},{"value":15,"text":"Bou Isma\u00efl"},{"value":16,"text":"A\u00efn Tagourait"},{"value":17,"text":"Khemisti"},{"value":18,"text":"Bouharoun"},{"value":19,"text":"Damous"},{"value":20,"text":"Larhat"},{"value":21,"text":"Beni Meleuk"},{"value":22,"text":"Sidi Amar"},{"value":23,"text":"Nador"},{"value":24,"text":"Menaceur"},{"value":25,"text":"Ahmar El A\u00efn"},{"value":26,"text":"Bourkika"},{"value":27,"text":"Sidi Rached"}],[{"value":"","text":""},{"value":0,"text":"Mila"},{"value":1,"text":"Sidi Khelifa"},{"value":2,"text":"A\u00efn Tine"},{"value":3,"text":"Chelghoum La\u00efd"},{"value":4,"text":"Oued Athmania"},{"value":5,"text":"A\u00efn Mellouk"},{"value":6,"text":"Grarem Gouga"},{"value":7,"text":"Hamala"},{"value":8,"text":"Sidi Merouane"},{"value":9,"text":"Chigara"},{"value":10,"text":"Oued Endja"},{"value":11,"text":"Zegha\u00efa"},{"value":12,"text":"Ahmed Rachedi"},{"value":13,"text":"Ferdjioua"},{"value":14,"text":"Yahia Beni Guecha"},{"value":15,"text":"Teleghma"},{"value":16,"text":"Oued Seguen"},{"value":17,"text":"El Mechira"},{"value":18,"text":"Tadjenanet"},{"value":19,"text":"Benyahia Abderrahmane"},{"value":20,"text":"Ouled Khelouf"},{"value":21,"text":"Terrai Ba\u00efnem"},{"value":22,"text":"Amira Arres"},{"value":23,"text":"Tessala Lamtai"},{"value":24,"text":"Rouached"},{"value":25,"text":"Tiberguent"},{"value":26,"text":"Tassadane Haddada"},{"value":27,"text":"Minar Zarza"},{"value":28,"text":"A\u00efn Be\u00efda Harriche"},{"value":29,"text":"El Ayadi Barb\u00e8s"},{"value":30,"text":"Bouhatem"},{"value":31,"text":"Derradji Bousselah"}],[{"value":"","text":""},{"value":0,"text":"A\u00efn Defla"},{"value":1,"text":"Miliana"},{"value":2,"text":"Ben Allal"},{"value":3,"text":"Djendel"},{"value":4,"text":"Oued Chorfa"},{"value":5,"text":"Barbouche"},{"value":6,"text":"Djelida"},{"value":7,"text":"Bourached"},{"value":8,"text":"Djemaa Ouled Chikh"},{"value":9,"text":"El Attaf"},{"value":10,"text":"Tiberkanine"},{"value":11,"text":"Khemis"},{"value":12,"text":"Sidi Lakhdar"},{"value":13,"text":"Hammam Righa"},{"value":14,"text":"A\u00efn Torki"},{"value":15,"text":"A\u00efn Benian"},{"value":16,"text":"Boumedfaa"},{"value":17,"text":"El Hoceinia"},{"value":18,"text":"A\u00efn Lechiakh"},{"value":19,"text":"Oued Djemaa"},{"value":20,"text":"A\u00efn Soltane"},{"value":21,"text":"Bordj El Emir Khaled"},{"value":22,"text":"Tarik Ibn Ziad"},{"value":23,"text":"Bir Ould Khlifa"},{"value":24,"text":"Bathia"},{"value":25,"text":"El Hassania"},{"value":26,"text":"Belaas"},{"value":27,"text":"Rouina"},{"value":28,"text":"Zeddine"},{"value":29,"text":"El Maine"},{"value":30,"text":"El Abadia"},{"value":31,"text":"Ain Bouyahia"},{"value":32,"text":"Tachta Zouggagha"},{"value":33,"text":"El Amra"},{"value":34,"text":"Mekhatria"},{"value":35,"text":"Arib"}],[{"value":"","text":""},{"value":0,"text":"Naama"},{"value":1,"text":"Mecheria"},{"value":2,"text":"A\u00efn Ben Khellil"},{"value":3,"text":"El Biodh"},{"value":4,"text":"A\u00efn Sefra"},{"value":5,"text":"Tiout"},{"value":6,"text":"Makmen Ben Amar"},{"value":7,"text":"Kasdir"},{"value":8,"text":"Moghrar"},{"value":9,"text":"Djeniene Bourezg"},{"value":10,"text":"Asla"},{"value":11,"text":"Sfissifa"}],[{"value":"","text":""},{"value":0,"text":"A\u00efn T\u00e9mouchent"},{"value":1,"text":"Sidi Ben Adda"},{"value":2,"text":"El Malah"},{"value":3,"text":"Terga"},{"value":4,"text":"Chaabat El Ham"},{"value":5,"text":"Ouled Kihel"},{"value":6,"text":"Hammam Bouhadjar"},{"value":7,"text":"El Hassasna"},{"value":8,"text":"Oued Barkach"},{"value":9,"text":"Chentouf"},{"value":10,"text":"Beni Saf"},{"value":11,"text":"Sidi Safi"},{"value":12,"text":"Emir Abdelkader"},{"value":13,"text":"A\u00efn Kihel"},{"value":14,"text":"Aghlel"},{"value":15,"text":"Aoubelil"},{"value":16,"text":"A\u00efn Tolba"},{"value":17,"text":"El Amria"},{"value":18,"text":"Hassi El Ghella"},{"value":19,"text":"Bouzedjar"},{"value":20,"text":"Ouled Boudjemaa"},{"value":21,"text":"A\u00efn Larbaa"},{"value":22,"text":"Oued Sebah"},{"value":23,"text":"Sidi Boumedi\u00e8ne"},{"value":24,"text":"Tamzoura"},{"value":25,"text":"Oulhassa Gheraba"},{"value":26,"text":"Sidi Ouriach"}],[{"value":"","text":""},{"value":0,"text":"Ghardaia"},{"value":1,"text":"Metlili"},{"value":2,"text":"Sebseb"},{"value":3,"text":"El Meniaa"},{"value":4,"text":"Hassi Gara"},{"value":5,"text":"Berriane"},{"value":6,"text":"El Guerara"},{"value":7,"text":"Zelfana"},{"value":8,"text":"Mansourah"},{"value":9,"text":"Hassi El Fehal"},{"value":10,"text":"Bounoura"},{"value":11,"text":"El Atteuf"},{"value":12,"text":"Dhayat Ben Dhahoua"}],[{"value":"","text":""},{"value":0,"text":"Relizane"},{"value":1,"text":"Bendaoud"},{"value":2,"text":"Ammi Moussa"},{"value":3,"text":"El Ouldja"},{"value":4,"text":"Ouled A\u00efch"},{"value":5,"text":"El Hassi"},{"value":6,"text":"Zemmoura"},{"value":7,"text":"Beni Dergoune"},{"value":8,"text":"Dar Ben Abdellah"},{"value":9,"text":"El Matmar"},{"value":10,"text":"Belaassel Bouzegza"},{"value":11,"text":"Sidi Khetab"},{"value":12,"text":"Oued Rhiou"},{"value":13,"text":"El Merdja Sidi Abed"},{"value":14,"text":"Oueriz\u00e8ne"},{"value":15,"text":"Lahlef"},{"value":16,"text":"Mazouna"},{"value":17,"text":"El Guettar"},{"value":18,"text":"Mendes"},{"value":19,"text":"Oued Essalem"},{"value":20,"text":"Sidi Lazreg"},{"value":21,"text":"Yellel"},{"value":22,"text":"Sidi Saada"},{"value":23,"text":"A\u00efn Rahma"},{"value":24,"text":"Kalaa"},{"value":25,"text":"Oued Djemaa"},{"value":26,"text":"A\u00efn Tarek"},{"value":27,"text":"Had Echkala"},{"value":28,"text":"Ramka"},{"value":29,"text":"Souk El Had"},{"value":30,"text":"Djidiouia"},{"value":31,"text":"Ouled Sidi Mihoub"},{"value":32,"text":"El Hamri"},{"value":33,"text":"Mediouna"},{"value":34,"text":"Beni Zentis"}]];
+        var $selectCommunes = $('select#commune').selectize({
+          closeAfterSelect: true,
+          selectOnTab: true//,
+          // highlight: false
+        });
+        var selectCommunes  = $selectCommunes[0].selectize;
+        var $selectRegion = $('select#region').selectize({
+        // $('select#region').selectize({
+          closeAfterSelect: true,
+          selectOnTab: true//,
+          // highlight: false
+        });
+        var selectRegion  = $selectRegion[0].selectize;
+        $('select#region').on("change", function(e){
+          // console.log($(this).val());
+          var wilaya = $(this).val();
+          // selectCommunes.clear();
+          selectCommunes.clearOptions();
+          selectCommunes.addOption(communes[wilaya]);
+          selectCommunes.addItem([$('select#commune').data("selected")]);
+          $('select#commune').data("selected","");
+        }).change();
+        $("#recherche").on("submit", function(e) {
+          // console.log(e);
+          if (!$("select#specialite").val()) {
+            selectSpecialite.focus();
+            /*
+            $("select#specialite").next(".selectize-control").tooltip({
+              placement: "right",
+              title: "erreur",
+              trigger: "click"
+            }).tooltip("show");
+            // $('#element').tooltip('destroy')
+            */
+            return false;
+          }
+          if (!$("select#region").val()) {
+            selectRegion.focus();
+            /*
+            $("select#region").next(".selectize-control").tooltip({
+              placement: "right",
+              title: "erreur",
+              trigger: "click"
+            }).tooltip("show");
+            // $('#element').tooltip('destroy')
+            */
+            return false;
+          }
+        });
+
+
+
+
+
+      });
+    </script>
+  </body>
+</html>
